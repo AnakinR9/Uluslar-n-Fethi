@@ -38,6 +38,7 @@ jobs:
           npm install
           npx cap add android
           npx @capacitor/assets generate --android --iconBackgroundColor '#050b14' --iconBackgroundColorDark '#050b14' || true
+          rm -rf android/app/src/main/res/mipmap-anydpi-v26
           sed -i 's/android:configChanges=/android:screenOrientation="sensorLandscape" android:configChanges=/' android/app/src/main/AndroidManifest.xml || true
           npx cap sync android
           cd android
