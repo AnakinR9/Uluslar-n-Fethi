@@ -1,0 +1,26 @@
+{
+  "name": "uluslarin-fethi",
+  "productName": "Ulusların Fethi",
+  "version": "1.0.0",
+  "description": "Ulusların Fethi - dünya fetih stratejisi",
+  "main": "main.js",
+  "author": "Ulusların Fethi",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win nsis --x64" },
+  "devDependencies": { "electron": "^31.0.0", "electron-builder": "^24.13.3" },
+  "build": {
+    "appId": "com.uluslarinfethi.app",
+    "productName": "Ulusların Fethi",
+    "files": ["main.js", "app/**"],
+    "directories": { "buildResources": "build", "output": "dist" },
+    "win": { "target": "nsis", "icon": "build/icon.png" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Ulusların Fethi",
+      "language": "1055",
+      "artifactName": "Uluslarin-Fethi-Kurulum-${version}.${ext}"
+    }
+  }
+}
